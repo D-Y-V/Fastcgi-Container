@@ -139,7 +139,7 @@ SyslogLogger::toSyslogPriority(const Level level) {
         case Logger::Level::EMERGENCY:
             return LOG_EMERG;
         default:
-        	fprintf(stderr, "SyslogLogger: unknown log level: %d\n", level);
+        	fprintf(stderr, "SyslogLogger: unknown log level: %d\n", (int)level);
             throw std::logic_error("SyslogLogger: unknown log level");
     }
 }

@@ -25,8 +25,9 @@
 #include <map>
 #include <vector>
 #include <functional>
+#include <any>
 
-#include "core/any.hpp"
+//#include "core/any.hpp"
 
 namespace fastcgi
 {
@@ -38,7 +39,7 @@ public:
 		REMOVE_ATTRIBUTE
 	};
 
-	using ListenerType = std::function<void(const AttributesHolder*, ListenerEventType, const std::string&, const core::any&)>;
+	using ListenerType = std::function<void(const AttributesHolder*, ListenerEventType, const std::string&, const std::any&)>;
 
 public:
 	AttributesHolder(bool invokeListeners=false);
@@ -55,24 +56,24 @@ public:
 
 	template<class T> T
 	getAttribute(const std::string &name) const {
-		core::any attr = getAttribute(name);
-		if (!attr.empty()) {
-			return core::any_cast<T>(attr);
+		std::any attr = getAttribute(name);
+		if (!attr.has_value()) {
+			return std::any_cast<T>(attr);
 		}
 		throw std::runtime_error("Attribute not found");
 	}
 
 	template<class T> T
 	getAttribute(const std::string &name, const T &defaultValue) const {
-		core::any attr = getAttribute(name);
-		if (!attr.empty()) {
-			return core::any_cast<T>(attr);
+		std::any attr = getAttribute(name);
+		if (!attr.has_value()) {
+			return std::any_cast<T>(attr);
 		}
 		return defaultValue;
 	}
 
-	virtual void setAttribute(const std::string &name, const core::any &value);
-	virtual core::any getAttribute(const std::string &name) const;
+	virtual void setAttribute(const std::string &name, const std::any &value);
+	virtual std::any getAttribute(const std::string &name) const;
 	virtual bool hasAttribute(const std::string &name) const;
 	virtual void removeAttribute(const std::string& name);
 	virtual void removeAllAttributes();
@@ -83,10 +84,10 @@ public:
 	void removeListener(std::size_t index);
 
 protected:
-	void setAttributeInternal(const std::string &name, const core::any &attr);
+	void setAttributeInternal(const std::string &name, const std::any &attr);
 
 	mutable std::mutex mutex_;
-	std::map<std::string, core::any> attributes_;
+	std::map<std::string, std::any> attributes_;
 
 	std::vector<ListenerType> listeners_;
 	bool invokeListeners_;

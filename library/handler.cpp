@@ -32,11 +32,11 @@ namespace fastcgi
 HandlerContext::~HandlerContext() {
 }
 	
-core::any HandlerContextImpl::getParam(const std::string &name) const {
+std::any HandlerContextImpl::getParam(const std::string &name) const {
 	return getAttribute(name);
 }
 
-void HandlerContextImpl::setParam(const std::string &name, const core::any &value) {
+void HandlerContextImpl::setParam(const std::string &name, const std::any &value) {
 	setAttribute(name, value);
 }
 	

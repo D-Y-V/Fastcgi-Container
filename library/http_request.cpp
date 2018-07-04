@@ -18,7 +18,7 @@
 
 #include <functional>
 
-#include "core/any.hpp"
+//#include "core/any.hpp"
 
 #include "fastcgi3/component_factory.h"
 #include "fastcgi3/config.h"
@@ -259,11 +259,11 @@ HttpRequest::isUserInRole(const std::string& roleName) const {
 }
 
 void
-HttpRequest::setAttribute(const std::string &name, const core::any &value) {
+HttpRequest::setAttribute(const std::string &name, const std::any &value) {
 	dynamic_cast<AttributesHolder*>(handlerContext_)->setAttribute(name, value);
 }
 
-core::any
+std::any
 HttpRequest::getAttribute(const std::string &name) const {
 	return dynamic_cast<AttributesHolder*>(handlerContext_)->getAttribute(name);
 }

@@ -28,8 +28,8 @@ namespace fastcgi
 
 class HandlerContextImpl : public HandlerContext, virtual public AttributesHolder {
 public:
-	virtual core::any getParam(const std::string &name) const;
-	virtual void setParam(const std::string &name, const core::any &value);
+	virtual std::any getParam(const std::string &name) const;
+	virtual void setParam(const std::string &name, const std::any &value);
 };
 
 } // namespace fastcgi

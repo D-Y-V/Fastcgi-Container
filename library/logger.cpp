@@ -128,7 +128,7 @@ std::string Logger::levelToString(const Level level) {
 	case Level::EMERGENCY:
 		return "EMERG";
 	default:
-    	fprintf(stderr, "Bad log level to string cast: %d\n", level);
+    	fprintf(stderr, "Bad log level to string cast: %d\n", (int)level);
 		throw std::runtime_error("bad log level to string cast");
 	} 
 }

@@ -18,7 +18,7 @@
 
 #include <iostream>
 
-#include "core/any.hpp"
+//#include "core/any.hpp"
 
 #include "fastcgi3/attributes_holder.h"
 
@@ -40,7 +40,7 @@ AttributesHolder::type(const std::string &name) const {
 }
 
 void
-AttributesHolder::setAttributeInternal(const std::string &name, const core::any &attr) {
+AttributesHolder::setAttributeInternal(const std::string &name, const std::any &attr) {
 	std::lock_guard<std::mutex> lock(mutex_);
 
 	auto it = attributes_.find(name);
@@ -62,17 +62,17 @@ AttributesHolder::setAttributeInternal(const std::string &name, const core::any 
 }
 
 
-core::any AttributesHolder::getAttribute(const std::string &name) const {
+std::any AttributesHolder::getAttribute(const std::string &name) const {
 	std::lock_guard<std::mutex> lock(mutex_);
 
 	auto it = attributes_.find(name);
 	if (it != attributes_.end()) {
 		return it->second;
 	}
-	return core::any();
+	return std::any();
 }
 
-void AttributesHolder::setAttribute(const std::string &name, const core::any &attr) {
+void AttributesHolder::setAttribute(const std::string &name, const std::any &attr) {
 	setAttributeInternal(name, attr);
 }
 

@@ -22,7 +22,8 @@
 
 #include <functional>
 
-#include "core/any.hpp"
+//#include "core/any.hpp"
+#include <any>
 
 #include <string>
 #include <vector>
@@ -37,8 +38,8 @@ class HandlerContext {
 public:
 	virtual ~HandlerContext();
 
-	virtual core::any getParam(const std::string &name) const = 0;
-	virtual void setParam(const std::string &name, const core::any &value) = 0;
+	virtual std::any getParam(const std::string &name) const = 0;
+	virtual void setParam(const std::string &name, const std::any &value) = 0;
 };
 
 /*!

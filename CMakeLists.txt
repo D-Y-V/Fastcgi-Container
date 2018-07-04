@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 2.8)
+cmake_minimum_required (VERSION 2.10)
 
 include(CheckLibraryExists)
 include(CheckIncludeFileCXX)
@@ -24,39 +24,9 @@ else ()
     message(FATAL_ERROR "Your C++ compiler does not support C++11")
 endif ()
 
-check_include_file_cxx(fcgiapp.h HAVE_FCGI_H)
-check_include_file_cxx(dlfcn.h HAVE_DLFCN_H)
-check_include_file_cxx(uuid/uuid.h HAVE_UUID_H)
-check_include_file_cxx("libxml/tree.h" HAVE_XML_TREE_H)
-check_include_file_cxx("libxml/parser.h" HAVE_XML_PARSER_H)
-check_include_file_cxx("libxml/xpath.h" HAVE_XML_XPATH_H)
-check_include_file_cxx("openssl/md5.h" HAVE_OPENSSL_MD5_H)
-check_include_file_cxx(core/any.hpp HAVE_MNMLSTC_H "-std=c++11")
+include_directories(/usr/include/libxml2)
 
-if(NOT HAVE_FCGI_H)
-	message(FATAL_ERROR "fcgiapp.h not found")
-endif(NOT HAVE_FCGI_H)
-if(NOT HAVE_DLFCN_H)
-	message(FATAL_ERROR "dlfn.h not found")
-endif(NOT HAVE_DLFCN_H)
-if(NOT HAVE_UUID_H)
-	message(FATAL_ERROR "uuid/uuid.h not found")
-endif(NOT HAVE_UUID_H)
-if(NOT HAVE_XML_TREE_H)
-	message(FATAL_ERROR "libxml header files not found")
-endif(NOT HAVE_XML_TREE_H)
-if(NOT HAVE_XML_PARSER_H)
-	message(FATAL_ERROR "libxml header files not found")
-endif(NOT HAVE_XML_PARSER_H)
-if(NOT HAVE_XML_XPATH_H)
-	message(FATAL_ERROR "libxml header files not found")
-endif(NOT HAVE_XML_XPATH_H)
-if(NOT HAVE_OPENSSL_MD5_H)
-	message(FATAL_ERROR "libcrypto header files not found")
-endif(NOT HAVE_OPENSSL_MD5_H)
-if(NOT HAVE_MNMLSTC_H)
-	message(FATAL_ERROR "MNMLSTC headers not found")
-endif(NOT HAVE_MNMLSTC_H)
+
 
 
 if(NOT CMAKE_BUILD_TYPE)
@@ -91,7 +61,7 @@ include_directories(
 	"${CMAKE_CURRENT_SOURCE_DIR}/include"
 )
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -std=c++11")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -std=c++17")
 set(LIBS "${LIBS} -lpthread")
 
 if(NOT CMAKE_BUILD_TYPE MATCHES DEBUG)

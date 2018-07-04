@@ -21,7 +21,7 @@
 
 #include <memory>
 
-#include "core/any.hpp"
+//#include "core/any.hpp"
 
 #include "fastcgi3/component.h"
 #include "fastcgi3/handler.h"
@@ -109,20 +109,20 @@ public:
 	template<class T> void
 	setAttribute(const std::string &name, T attr) {
 		T _value = attr;
-		setAttribute(name, (const core::any&)std::move(_value));
+		setAttribute(name, (const std::any&)std::move(_value));
 	}
 
 	template<class T> T
 	getAttribute(const std::string &name) {
-		core::any attr = getAttribute(name);
-		if (!attr.empty()) {
-			return core::any_cast<T>(attr);
+		std::any attr = getAttribute(name);
+		if (!attr.has_value()) {
+			return std::any_cast<T>(attr);
 		}
 		throw std::runtime_error("Attribute not found");
 	}
 
-	void setAttribute(const std::string &name, const core::any &value);
-	core::any getAttribute(const std::string &name) const;
+	void setAttribute(const std::string &name, const std::any &value);
+	std::any getAttribute(const std::string &name) const;
 	bool hasAttribute(const std::string &name);
 	void removeAttribute(const std::string& name);
 	void removeAllAttributes();
