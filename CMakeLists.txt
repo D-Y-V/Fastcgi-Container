@@ -12,17 +12,15 @@ set(FASTCGICONTAINER_VERSION
   ${FASTCGICONTAINER_MAJOR_VERSION}.${FASTCGICONTAINER_MINOR_VERSION}.${FASTCGICONTAINER_PATCH_VERSION}
 )
 
-if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "GNU")
-    execute_process(
-        COMMAND ${CMAKE_CXX_COMPILER} -dumpversion OUTPUT_VARIABLE GCC_VERSION)
-    if (NOT (GCC_VERSION VERSION_GREATER 4.9 OR GCC_VERSION VERSION_EQUAL 4.9))
-        message(FATAL_ERROR "${PROJECT_NAME} requires g++ 4.9 or greater.")
-    endif ()
-#elseif ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
-#    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
-else ()
-    message(FATAL_ERROR "Your C++ compiler does not support C++11")
-endif ()
+include(CheckCXXCompilerFlag)
+CHECK_CXX_COMPILER_FLAG("-std=c++17" COMPILER_SUPPORTS_CXX17)
+if(COMPILER_SUPPORTS_CXX17)
+	message("Compiler ${CMAKE_CXX_COMPILER} has C++17 support.")
+else()
+    message(FATAL_ERROR "Compiler ${CMAKE_CXX_COMPILER} has NO C++17 support.")
+endif()
+
+
 
 include_directories(/usr/include/libxml2)
 
