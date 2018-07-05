@@ -6,7 +6,7 @@ Fastcgi Container is a branch of Yandex's [Fastcgi Daemon](https://github.com/lm
 
 What's new compared to Fastcgi Daemon:
 
-* The framework is written in C++11 and does not depend on Boost libraries anymore 
+* The framework is written in C++17 and does not depend on Boost libraries anymore
 * Support for request filters
 * Support for servlets as an extensions of request handlers
 * Support for sessions
@@ -27,13 +27,12 @@ Note that form-based authentication depends on session management: if you decide
 
 # Requirements
 
-* A C++11 compliant compiler with complete support for C++11 regex (e.g., GCC 4.9 meets the minimum feature set required to build the package)
+* A C++17 compliant compiler with complete support for C++17 regex (e.g., GCC 4.9 meets the minimum feature set required to build the package)
 * CMake build system
 * Currently the framework can be built on Linux only
 
-# Dependencies
+# Dependencies (libraries && headers )
 
-* [MNMLSTC Core](https://github.com/mnmlstc/core) - a C++11 library that adds several library features that are to be included in C++14 and beyond
 * libfcgi
 * libfcgi++
 * libxml2
@@ -43,21 +42,17 @@ Note that form-based authentication depends on session management: if you decide
 
 # Build
 
-Make sure the MNMLSTC Core is available in your INCLUDE path (for example, in `/usr/include` or `/usr/local/include`). It should resolve properly the header files with prefix `core/` like:
-
-	#include "core/any.hpp"
 
 To build the project you will need to have CMake installed appropriately in your system. 
 
 Inside the project directory, execute the following commands to generate Makefiles, build, and install the Fastcgi Container:
 
-	cmake .
-	make
-	sudo make install 
+* avoid run cmake on project root
 
-If your default compiler does not meet the minimum feature set required to build the package, you may specify alternative compiler as follows:  
+    mkdir binout
+    cd binout
 
-	cmake -DCMAKE_CXX_COMPILER=g++-4.9 .
+	cmake ..
 	make
 	sudo make install 
 
