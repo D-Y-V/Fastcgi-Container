@@ -20,9 +20,10 @@ else()
     message(FATAL_ERROR "Compiler ${CMAKE_CXX_COMPILER} has NO C++17 support.")
 endif()
 
-
-
-include_directories(/usr/include/libxml2)
+# around libxml2
+find_package(LibXml2 REQUIRED)
+message(STATUS LIBXML2_INCLUDE_DIR = ${LIBXML2_INCLUDE_DIR})
+include_directories(${LIBXML2_INCLUDE_DIR})
 
 
 
