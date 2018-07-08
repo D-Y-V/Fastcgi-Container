@@ -60,12 +60,13 @@ include_directories(
 	"${CMAKE_CURRENT_SOURCE_DIR}/include"
 )
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -std=c++17")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -std=c++17 -g") # !!! DEBUG
 set(LIBS "${LIBS} -lpthread")
 
 if(NOT CMAKE_BUILD_TYPE MATCHES DEBUG)
     if(CMAKE_COMPILER_IS_GNUCXX)
-		set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -s") 	# Strip binary
+#		set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -s") 	# Strip binary
+		set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS}")
 	endif(CMAKE_COMPILER_IS_GNUCXX)	
 endif(NOT CMAKE_BUILD_TYPE MATCHES DEBUG)
 
@@ -79,12 +80,15 @@ add_subdirectory(syslog)
 add_subdirectory(statistics)
 add_subdirectory(session-manager)
 add_subdirectory(authenticator)
-add_subdirectory(page-compiler)
+###add_subdirectory(page-compiler) ## TODO temporary not work
 ###add_subdirectory(example)
 ###add_subdirectory(logging)
 
 
 # Add all targets to the build-tree export set
+
+###		fastcgi3-page-compiler  ## TODO temporary not work
+
 export(
 	TARGETS 
 		fastcgi3-container
@@ -94,7 +98,6 @@ export(
 		fastcgi3-request-cache
 		fastcgi3-session-manager
 		fastcgi3-authenticator
-		fastcgi3-page-compiler
 		fastcgi3-daemon
   	FILE "${PROJECT_BINARY_DIR}/FastcgiContainerTargets.cmake"
 )
