@@ -124,13 +124,13 @@ ExampleHandler::handleRequest(fastcgi::Request *req, fastcgi::HandlerContext *ha
 
 printf("1\n");
 
-	core::any param = handlerContext->getParam("testParam");
-	if (param.empty()) {
+	std::any param = handlerContext->getParam("testParam");
+	if (param.has_value()) {
 		std::cout << "testParam not found" << std::endl;
 	} else {
 		try {
-			std::cout << "testParam = " << core::any_cast<std::string>(param) << std::endl;
-		} catch (const core::bad_any_cast &) {
+			std::cout << "testParam = " << std::any_cast<std::string>(param) << std::endl;
+		} catch (const std::bad_any_cast &) {
 			std::cout << "bad_any_cast: testParam is not string" << std::endl;
 		}
 	}
@@ -226,8 +226,8 @@ ExampleHandler2::onUnload() {
 
 void
 ExampleHandler2::handleRequest(fastcgi::Request *req, fastcgi::HandlerContext *handlerContext) {
-	core::any param1 = handlerContext->getParam("param1");
-	core::any param2 = handlerContext->getParam("param2");
+	std::any param1 = handlerContext->getParam("param1");
+	std::any param2 = handlerContext->getParam("param2");
 
 	fastcgi::RequestStream stream(req);
 	stream << "ExampleHandler2: OK\n";
