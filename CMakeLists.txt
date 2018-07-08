@@ -60,14 +60,13 @@ include_directories(
 	"${CMAKE_CURRENT_SOURCE_DIR}/include"
 )
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -std=c++17 -g") # !!! DEBUG
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -std=c++17") # -g !!! DEBUG
 set(LIBS "${LIBS} -lpthread")
 
 if(NOT CMAKE_BUILD_TYPE MATCHES DEBUG)
     if(CMAKE_COMPILER_IS_GNUCXX)
-#		set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -s") 	# Strip binary
-		set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS}")
-	endif(CMAKE_COMPILER_IS_GNUCXX)	
+		set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -s") 	# Strip binary
+	endif(CMAKE_COMPILER_IS_GNUCXX)
 endif(NOT CMAKE_BUILD_TYPE MATCHES DEBUG)
 
 
