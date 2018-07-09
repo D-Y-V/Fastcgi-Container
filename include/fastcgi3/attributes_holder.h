@@ -27,7 +27,6 @@
 #include <functional>
 #include <any>
 
-//#include "core/any.hpp"
 
 namespace fastcgi
 {

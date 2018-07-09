@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
+    <generated>
+      <config projectName="FastcgiContainer" targetName="fastcgi3-container" />
+      <config projectName="FastcgiContainer" targetName="fastcgi3-session-manager" />
+      <config projectName="FastcgiContainer" targetName="fastcgi3-request-cache" />
+      <config projectName="FastcgiContainer" targetName="fastcgi3-statistics" />
+      <config projectName="FastcgiContainer" targetName="fastcgi3-filelogger" />
+      <config projectName="FastcgiContainer" targetName="fastcgi3-syslog" />
+      <config projectName="FastcgiContainer" targetName="fastcgi3-daemon" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f60b919c-d4e6-471f-8e25-69b6666fc324" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authenticator/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authenticator/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authenticator/abstract_authenticator.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authenticator/abstract_authenticator.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authenticator/basic_authenticator.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authenticator/basic_authenticator.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authenticator/delegated_authenticator.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authenticator/delegated_authenticator.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authenticator/factory.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authenticator/form_authenticator.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authenticator/form_authenticator.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/example.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/example/example.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/details/security_authenticator.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/fastcgi3/attributes_holder.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/fastcgi3/attributes_holder.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/fastcgi3/handler.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/fastcgi3/handler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/fastcgi3/http_request.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/fastcgi3/http_request.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/fastcgi3/request.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/fastcgi3/request.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/fastcgi3/security_principal.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/fastcgi3/security_realm.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/fastcgi3/security_subject.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/fastcgi3/session.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/fastcgi3/session.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/library/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/attributes_holder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/library/attributes_holder.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/componentset.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/library/componentset.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/http_request.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/library/http_request.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/request.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/library/request.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/security_authenticator.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/security_principal.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/security_realm.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/security_subject.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/session.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/library/session.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logging/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logging/Makefile.am" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logging/logger.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logging/logger.h" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
+    <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FavoritesManager">
+    <favorites_list name="FastcgiContainer" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="http_request.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/fastcgi3/http_request.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+              <folding>
+                <element signature="e#1008#1025#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="componentset.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/library/componentset.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-938">
+              <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Attribute</find>
+      <find>setAttribute</find>
+      <find>urlPrefix</find>
+      <find>url_prefix</find>
+      <find>Filter</find>
+      <find>setsubject</find>
+      <find>Role</find>
+      <find>core</find>
+      <find>role</find>
+    </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/page-compiler</dir>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/library/handler.cpp" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/include/fastcgi3/handler.h" />
+        <option value="$PROJECT_DIR$/example/fastcgi.conf" />
+        <option value="$PROJECT_DIR$/authenticator/basic_authenticator.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/include/fastcgi3/http_request.h" />
+        <option value="$PROJECT_DIR$/library/request.cpp" />
+        <option value="$PROJECT_DIR$/include/fastcgi3/request.h" />
+        <option value="$PROJECT_DIR$/include/fastcgi3/session.h" />
+        <option value="$PROJECT_DIR$/library/http_request.cpp" />
+        <option value="$PROJECT_DIR$/library/session.cpp" />
+        <option value="$PROJECT_DIR$/library/componentset.cpp" />
+        <option value="$PROJECT_DIR$/example/example.cpp" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1" />
+    <option name="y" value="2" />
+    <option name="width" value="1354" />
+    <option name="height" value="734" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="FastcgiContainer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="D-Y-V" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://httpbin.org/get" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="show_env" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Build All">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="FastcgiContainer" RUN_TARGET_NAME="fastcgi3-daemon" EXPLICIT_BUILD_TARGET_NAME="all" />
+    <configuration name="fastcgi3-container" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FastcgiContainer" TARGET_NAME="fastcgi3-container" CONFIG_NAME="Debug" />
+    <configuration name="fastcgi3-daemon" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FastcgiContainer" TARGET_NAME="fastcgi3-daemon" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="FastcgiContainer" RUN_TARGET_NAME="fastcgi3-daemon" />
+    <configuration name="fastcgi3-filelogger" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FastcgiContainer" TARGET_NAME="fastcgi3-filelogger" CONFIG_NAME="Debug" />
+    <configuration name="fastcgi3-request-cache" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FastcgiContainer" TARGET_NAME="fastcgi3-request-cache" CONFIG_NAME="Debug" />
+    <configuration name="fastcgi3-session-manager" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FastcgiContainer" TARGET_NAME="fastcgi3-session-manager" CONFIG_NAME="Debug" />
+    <configuration name="fastcgi3-statistics" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FastcgiContainer" TARGET_NAME="fastcgi3-statistics" CONFIG_NAME="Debug" />
+    <configuration name="fastcgi3-syslog" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FastcgiContainer" TARGET_NAME="fastcgi3-syslog" CONFIG_NAME="Debug" />
+    <list>
+      <item itemvalue="Application.Build All" />
+      <item itemvalue="Application.fastcgi3-filelogger" />
+      <item itemvalue="Application.fastcgi3-container" />
+      <item itemvalue="Application.fastcgi3-daemon" />
+      <item itemvalue="Application.fastcgi3-request-cache" />
+      <item itemvalue="Application.fastcgi3-session-manager" />
+      <item itemvalue="Application.fastcgi3-statistics" />
+      <item itemvalue="Application.fastcgi3-syslog" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f60b919c-d4e6-471f-8e25-69b6666fc324" name="Default" comment="" />
+      <created>1530739148071</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1530739148071</updated>
+      <workItem from="1530739149727" duration="26000" />
+      <workItem from="1530739309269" duration="27000" />
+      <workItem from="1530739382396" duration="2268000" />
+      <workItem from="1530800432686" duration="59000" />
+      <workItem from="1530800768451" duration="4493000" />
+      <workItem from="1530814628514" duration="636000" />
+      <workItem from="1530878436721" duration="2132000" />
+      <workItem from="1530887024152" duration="766000" />
+      <workItem from="1530893608708" duration="2599000" />
+      <workItem from="1530999324125" duration="1798000" />
+      <workItem from="1531072956646" duration="2040000" />
+      <workItem from="1531075094946" duration="54000" />
+      <workItem from="1531075424241" duration="3129000" />
+      <workItem from="1531078672486" duration="1633000" />
+      <workItem from="1531084897824" duration="101000" />
+      <workItem from="1531090515267" duration="1083000" />
+      <workItem from="1531142074149" duration="6274000" />
+      <workItem from="1531156486298" duration="4264000" />
+    </task>
+    <task id="LOCAL-00001" summary="Remove dependency from MNMLSTC Core (core/any)&#10;Porting to C++17, change to std::any">
+      <created>1530740169144</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1530740169144</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Minor correction build system">
+      <created>1530802260889</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1530802260889</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fixing libxml2 include dir">
+      <created>1530803704344</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1530803704344</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Adopt to c++17">
+      <created>1530804391685</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1530804391685</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Gentoo ebuild">
+      <created>1530887107448</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1530887107448</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Change core::any to std::any">
+      <created>1531074299623</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1531074299624</updated>
+    </task>
+    <task id="LOCAL-00007" summary="remove degug options">
+      <created>1531084980507</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1531084980507</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="33382000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1" y="2" width="1354" height="734" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5391015" visible="true" weight="0.3048048" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32838285" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.5717456" weight="0.36772045" />
+      <window_info anchor="bottom" id="CMake" order="7" sideWeight="0.49778107" weight="0.32612312" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.46377894" side_tool="true" weight="0.27062705" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.41763726" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3349835" />
+      <window_info id="Structure" order="1" sideWeight="0.4608985" side_tool="true" visible="true" weight="0.3048048" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.5362211" weight="0.18678816" />
+      <window_info id="Favorites" order="2" sideWeight="0.5429043" side_tool="true" weight="0.30545184" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39933994" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Remove dependency from MNMLSTC Core (core/any)&#10;Porting to C++17, change to std::any" />
+    <MESSAGE value="Minor correction build system" />
+    <MESSAGE value="Fixing libxml2 include dir" />
+    <MESSAGE value="Adopt to c++17" />
+    <MESSAGE value="Gentoo ebuild" />
+    <MESSAGE value="Change core::any to std::any" />
+    <MESSAGE value="remove degug options" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove degug options" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="4" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file:///usr/lib/gcc/x86_64-pc-linux-gnu/7.3.0/include/g++-v7/bits/ptr_traits.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="141" selection-start-line="141" selection-end-line="141" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/gcc/x86_64-pc-linux-gnu/7.3.0/include/g++-v7/bits/basic_string.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="510" selection-start-line="510" selection-end-line="510" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page-compiler/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page-compiler/page.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1092" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page-compiler/page.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-283" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/gcc/x86_64-pc-linux-gnu/7.3.0/include/g++-v7/bits/move.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/fastcgi.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="18" column="4" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/handlers.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logging/logger.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-247" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authenticator/factory.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authenticator/delegated_authenticator.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="57" column="33" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authenticator/delegated_authenticator.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/util.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="333" column="8" lean-forward="true" selection-start-line="333" selection-start-column="8" selection-end-line="333" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/server.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="113" column="8" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/details/request_filter.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/request_filter.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1085">
+          <caret line="83" column="12" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/parser.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/details/loader.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/details/mmap_file.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-148" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/fastcgi3/functors.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/fastcgi3/attributes_holder.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-568" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/string_buffer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-294" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authenticator/form_authenticator.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-546" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authenticator/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file-logger/file_logger.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="607">
+          <caret line="138" column="51" lean-forward="true" selection-start-line="138" selection-start-column="51" selection-end-line="138" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file-logger/file_logger.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-84" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/fastcgi3/stream.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/fastcgi3/component.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logging/logger.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FastcgiContainerConfigVersion.cmake.in">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authenticator/abstract_authenticator.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authenticator/abstract_authenticator.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-168" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authenticator/basic_authenticator.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-288" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authenticator/basic_authenticator.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authenticator/form_authenticator.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-630" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/request-cache/file_cache.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4892" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/request-cache/file_cache.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1092" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FastcgiContainerConfig.cmake.in">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/statistics/response_time_handler.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/statistics/response_time_handler.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/fastcgi3/security_principal.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-168" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/request.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5732">
+          <caret line="576" selection-start-line="576" selection-end-line="576" />
+          <folding>
+            <element signature="e#1032#1052#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/fastcgi3/request.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2016">
+          <caret line="144" selection-start-line="144" selection-end-line="144" />
+          <folding>
+            <element signature="e#1063#1077#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/fastcgi3/session.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="e#998#1015#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="45" column="1" lean-forward="true" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="112" column="26" lean-forward="true" selection-start-line="112" selection-start-column="26" selection-end-line="112" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/session.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="27" column="107" selection-start-line="27" selection-start-column="107" selection-end-line="27" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/http_request.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3268">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/fastcgi3/http_request.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#1008#1025#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/example.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4361">
+          <caret line="322" selection-start-line="322" selection-end-line="322" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/componentset.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-938">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -21,8 +21,6 @@
 
 #include <memory>
 
-//#include "core/any.hpp"
-
 #include "fastcgi3/component.h"
 #include "fastcgi3/handler.h"
 #include "fastcgi3/request.h"
@@ -98,13 +96,6 @@ public:
     std::shared_ptr<Session> createSession();
     std::shared_ptr<Session> getSession();
 
-	std::shared_ptr<security::Subject> getSubject() const;
-	bool isUserInRole(const std::string& roleName) const;
-
-	template<class T> bool
-	isUserInRole(const std::string &roleName) {
-		return req_->isUserInRole<T>(roleName);
-	}
 
 	template<class T> void
 	setAttribute(const std::string &name, T attr) {

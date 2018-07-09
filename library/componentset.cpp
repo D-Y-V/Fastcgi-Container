@@ -34,8 +34,6 @@
 #include "details/component_context.h"
 #include "details/globals.h"
 
-//#include "core/memory.hpp"
-
 #ifdef HAVE_DMALLOC_H
 #include <dmalloc.h>
 #endif

@@ -78,7 +78,7 @@ add_subdirectory(file-logger)
 add_subdirectory(syslog)
 add_subdirectory(statistics)
 add_subdirectory(session-manager)
-add_subdirectory(authenticator)
+###add_subdirectory(authenticator)
 ###add_subdirectory(page-compiler) ## TODO temporary not work
 ###add_subdirectory(example)
 ###add_subdirectory(logging)
@@ -96,7 +96,7 @@ export(
 		fastcgi3-statistics
 		fastcgi3-request-cache
 		fastcgi3-session-manager
-		fastcgi3-authenticator
+###		fastcgi3-authenticator
 		fastcgi3-daemon
   	FILE "${PROJECT_BINARY_DIR}/FastcgiContainerTargets.cmake"
 )

@@ -30,7 +30,6 @@
 #include "fastcgi3/logger.h"
 #include "fastcgi3/request_io_stream.h"
 #include "fastcgi3/session.h"
-#include "fastcgi3/security_subject.h"
 #include "fastcgi3/except.h"
 
 #include "details/parser.h"
@@ -110,14 +109,14 @@ File::data() const {
 
 Request::Request(std::shared_ptr<Logger> logger, std::shared_ptr<RequestCache> cache, std::shared_ptr<SessionManager> sessionManager) :
 	processed_(false), delay_(0), logger_(logger), cache_(cache),
-	session_(), session_manager_(std::move(sessionManager)), subject_()
+	session_(), session_manager_(std::move(sessionManager))
 {
 	reset();
 }
 
 Request::~Request() {
 	session_.reset();
-	subject_.reset();
+//	subject_.reset();
 }
 
 const std::string&
@@ -502,30 +501,6 @@ Request::changeSessionId() {
 	}
 }
 
-void
-Request::setSubject(std::shared_ptr<security::Subject> subject) {
-	if (!subject->isAnonymous()) {
-		if (subject_) {
-			throw std::runtime_error("Subject already assigned");
-		}
-		subject_ = std::move(subject);
-	} else {
-		subject_.reset();
-	}
-}
-
-std::shared_ptr<security::Subject>
-Request::getSubject() const {
-	if (subject_) {
-		return subject_;
-	}
-	return security::Subject::getAnonymousSubject();
-}
-
-bool
-Request::isUserInRole(const std::string& roleName) const {
-	return getSubject()->hasPrincipal(roleName);
-}
 
 std::stringstream*
 Request::getResponseStream() {
@@ -599,7 +574,6 @@ Request::reset() {
 	out_headers_.clear();
 
 	session_.reset();
-	subject_.reset();
 }
 
 void

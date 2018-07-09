@@ -1,0 +1,14 @@
+GET https://httpbin.org/get?show_env=1
+Accept: application/json
+
+<> 2018-07-08T095701.200.json
+
+###
+
+GET https://httpbin.org/get?show_env=1
+Accept: application/json
+
+<> 2018-07-08T095619.200.json
+
+###
+

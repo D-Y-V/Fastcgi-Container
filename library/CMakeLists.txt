@@ -8,35 +8,31 @@ add_library(
 	except.cpp       
 	handlerset.cpp     
 	loader.cpp     
-	request.cpp                   
-	security_authenticator.cpp  
-	server.cpp           
+	request.cpp
+        server.cpp
 	string_buffer.cpp
 	component_context.cpp  
 	config.cpp        
 	file_buffer.cpp  
 	http_request.cpp   
 	logger.cpp     
-	request_filter.cpp            
-	security_principal.cpp      
-	session.cpp          
+	request_filter.cpp
+        session.cpp
 	util.cpp
 	component.cpp          
 	cookie.cpp        
 	globals.cpp      
 	http_response.cpp  
 	mmap_file.cpp  
-	request_thread_pool.cpp       
-	security_realm.cpp          
-	session_manager.cpp  xml.cpp
+	request_thread_pool.cpp
+        session_manager.cpp  xml.cpp
 	component_factory.cpp  
 	data_buffer.cpp   
 	handler.cpp      
 	http_servlet.cpp   
 	parser.cpp     
-	response_time_statistics.cpp  
-	security_subject.cpp        
-	stream.cpp
+	response_time_statistics.cpp
+        stream.cpp
 )
 
 set_target_properties(fastcgi3-container PROPERTIES

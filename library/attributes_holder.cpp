@@ -18,7 +18,6 @@
 
 #include <iostream>
 
-//#include "core/any.hpp"
 
 #include "fastcgi3/attributes_holder.h"
 

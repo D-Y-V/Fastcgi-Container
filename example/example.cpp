@@ -75,26 +75,7 @@ public:
 };
 
 
-struct UserData {
-	std::string password;
-	std::vector<std::string> roles;
-};
 
-class ExampleRealm : virtual public fastcgi::security::Realm {
-public:
-	ExampleRealm(std::shared_ptr<fastcgi::ComponentContext> context);
-	virtual ~ExampleRealm();
-
-    virtual void onLoad() override;
-    virtual void onUnload() override;
-
-	virtual std::shared_ptr<fastcgi::security::Subject> authenticate(const std::string& username, const std::string& credentials)  override;
-
-	virtual std::shared_ptr<fastcgi::security::Subject> getSubject(const std::string& username) override;
-
-private:
-    std::unordered_map<std::string, std::shared_ptr<UserData>> users_;
-};
 
 
 
@@ -332,91 +313,6 @@ try {
 }
 
 
-ExampleRealm::ExampleRealm(std::shared_ptr<fastcgi::ComponentContext> context)
-: fastcgi::security::Realm(context) {
-
-    const fastcgi::Config *config = context->getConfig();
-	const std::string componentXPath = context->getComponentXPath();
-
-    std::vector<std::string> users;
-    config->subKeys(componentXPath+"/users/user[count(@name)=1]", users);
-    for (auto& u : users) {
-        std::string username = config->asString(u + "/@name", "");
-
-        std::shared_ptr<UserData> data = std::make_shared<UserData>();
-        data->password = config->asString(u + "/@password", "");
-
-        std::vector<std::string> roles;
-        config->subKeys(u+"/role[count(@name)=1]", roles);
-        for (auto& r : roles) {
-        	data->roles.push_back(config->asString(r + "/@name", ""));
-        }
-
-        users_.insert({username, std::move(data)});
-    }
-
-}
-
-ExampleRealm::~ExampleRealm() {
-	;
-}
-
-void
-ExampleRealm::onLoad() {
-	fastcgi::security::Realm::onLoad();
-}
-
-void
-ExampleRealm::onUnload() {
-	fastcgi::security::Realm::onUnload();
-}
-
-std::shared_ptr<fastcgi::security::Subject> ExampleRealm::authenticate(const std::string& username, const std::string& credentials) {
-	std::shared_ptr<fastcgi::security::Subject> subject;
-
-printf("Try user >%s< >%s<\n", username.c_str(), credentials.c_str());
-
-	auto it = users_.find(username);
-	if (users_.end()!=it && it->second && credentials==it->second->password) {
-		subject = std::make_shared<fastcgi::security::Subject>();
-
-		for (auto &r : it->second->roles) {
-			subject->setPrincipal(std::make_shared<fastcgi::security::Principal>(r));
-		}
-
-		subject->setReadOnly();
-
-		// Logging
-		std::vector<std::shared_ptr<fastcgi::security::Principal>> principals;
-		subject->getPrincipals(principals);
-		std::stringstream s;
-		for (auto &p : principals) {
-			s << p->getName() << " ";
-		}
-
-printf("User %s is logged in as %s\n", username.c_str(), s.str().c_str());
-		logger_->info("User %s is logged in as %s\n", username.c_str(), s.str().c_str());
-	}
-
-	return subject;
-}
-
-std::shared_ptr<fastcgi::security::Subject> ExampleRealm::getSubject(const std::string& username)  {
-	std::shared_ptr<fastcgi::security::Subject> subject;
-
-	auto it = users_.find(username);
-	if (users_.end()!=it && it->second) {
-		subject = std::make_shared<fastcgi::security::Subject>();
-
-		for (auto &r : it->second->roles) {
-			subject->setPrincipal(std::make_shared<fastcgi::security::Principal>(r));
-		}
-
-		subject->setReadOnly();
-	}
-
-	return subject;
-}
 
 
 FCGIDAEMON_REGISTER_FACTORIES_BEGIN()
@@ -424,7 +320,6 @@ FCGIDAEMON_ADD_DEFAULT_FACTORY("example", ExampleHandler)
 FCGIDAEMON_ADD_DEFAULT_FACTORY("example2", ExampleHandler2)
 FCGIDAEMON_ADD_DEFAULT_FACTORY("example3", ExampleServlet)
 FCGIDAEMON_ADD_DEFAULT_FACTORY("filter1", ExampleFilter)
-FCGIDAEMON_ADD_DEFAULT_FACTORY("example-realm", ExampleRealm)
 FCGIDAEMON_REGISTER_FACTORIES_END()
 
 

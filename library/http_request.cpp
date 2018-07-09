@@ -18,7 +18,6 @@
 
 #include <functional>
 
-//#include "core/any.hpp"
 
 #include "fastcgi3/component_factory.h"
 #include "fastcgi3/config.h"
@@ -248,15 +247,6 @@ HttpRequest::getSession() {
 	return std::move(req_->getSession());
 }
 
-std::shared_ptr<security::Subject>
-HttpRequest::getSubject() const {
-	return std::move(req_->getSubject());
-}
-
-bool
-HttpRequest::isUserInRole(const std::string& roleName) const {
-	return req_->isUserInRole(roleName);
-}
 
 void
 HttpRequest::setAttribute(const std::string &name, const std::any &value) {

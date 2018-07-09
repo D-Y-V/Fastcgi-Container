@@ -21,8 +21,6 @@
 #define _FASTCGI_HANDLER_H_
 
 #include <functional>
-
-//#include "core/any.hpp"
 #include <any>
 
 #include <string>

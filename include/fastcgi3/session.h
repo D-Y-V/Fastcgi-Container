@@ -24,7 +24,6 @@
 #include <chrono>
 
 #include "fastcgi3/attributes_holder.h"
-#include "fastcgi3/security_subject.h"
 
 namespace fastcgi
 {
@@ -45,7 +44,6 @@ private:
 protected:
 	virtual void init();
 	void changeId(std::string& newId);
-	void setSubject(std::shared_ptr<security::Subject>);
 
 public:
 	virtual ~Session();
@@ -71,7 +69,6 @@ public:
 	void updateLastAccessedTime();
 	bool isExpired() const;
 
-	std::shared_ptr<security::Subject> getSubject() const;
 
 protected:
 	std::string id_;
@@ -80,9 +77,6 @@ protected:
     std::chrono::steady_clock::time_point last_accessed_;
     std::chrono::minutes max_inactive_interval_;
 
-    /// The Authenticator may cache a previously authenticated Subject,
-    /// and avoid potentially expensive Realm.authenticate() calls on every request.
-	std::shared_ptr<security::Subject> subject_;
 };
 
 

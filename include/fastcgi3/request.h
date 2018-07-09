@@ -31,7 +31,6 @@
 #include "fastcgi3/cookie.h"
 #include "fastcgi3/session.h"
 #include "fastcgi3/session_manager.h"
-#include "fastcgi3/security_subject.h"
 #include "fastcgi3/data_buffer.h"
 #include "fastcgi3/config.h"
 #include "fastcgi3/range.h"
@@ -144,16 +143,6 @@ public:
 	std::shared_ptr<Session> getSession();
 	void changeSessionId();
 
-	void setSubject(std::shared_ptr<security::Subject> subject);
-	std::shared_ptr<security::Subject> getSubject() const;
-
-	bool isUserInRole(const std::string& roleName) const;
-
-	template<class T> bool
-	isUserInRole(const std::string &roleName) {
-		return getSubject()->hasPrincipal<T>(roleName);
-	}
-
 	std::stringstream* getResponseStream();
 
 	void write(std::streambuf *buf);
@@ -241,7 +230,6 @@ private:
 
 	std::shared_ptr<SessionManager> session_manager_;
 
-	std::shared_ptr<security::Subject> subject_;
 
 	std::stringstream response_stream_;
 };

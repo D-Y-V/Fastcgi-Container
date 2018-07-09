@@ -25,7 +25,7 @@ namespace fastcgi
 
 Session::Session(const std::string &id)
 : AttributesHolder(true),
-  id_(id), created_(std::chrono::steady_clock::now()), last_accessed_(created_), max_inactive_interval_(30), subject_() {
+  id_(id), created_(std::chrono::steady_clock::now()), last_accessed_(created_), max_inactive_interval_(30) {
 	init();
 }
 
@@ -51,7 +51,6 @@ Session::getId() const {
 void
 Session::invalidate() {
 	removeAllAttributes();
-	subject_.reset();
 	last_accessed_ = std::chrono::steady_clock::now() - max_inactive_interval_;
 }
 
@@ -75,17 +74,5 @@ Session::isExpired() const {
 	return (std::chrono::steady_clock::now() > (last_accessed_ + max_inactive_interval_));
 }
 
-void
-Session::setSubject(std::shared_ptr<security::Subject> subject) {
-	subject_ = std::move(subject);
-}
-
-std::shared_ptr<security::Subject>
-Session::getSubject() const {
-	if (subject_) {
-		return subject_;
-	}
-	return security::Subject::getAnonymousSubject();
-}
 
 }
