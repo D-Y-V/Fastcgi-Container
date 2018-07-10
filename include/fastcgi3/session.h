@@ -30,15 +30,12 @@ namespace fastcgi
 
 class SessionManager;
 
-namespace security
-{
-class Authenticator;
-}
+
 
 class Session : virtual public AttributesHolder {
 private:
 	friend class SessionManager;
-	friend class security::Authenticator;
+
 	Session(const std::string &id);
 
 protected:

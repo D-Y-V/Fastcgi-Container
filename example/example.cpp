@@ -15,7 +15,6 @@
 #include "fastcgi3/http_response.h"
 #include "fastcgi3/http_servlet.h"
 
-#include "fastcgi3/security_realm.h"
 
 
 #ifdef HAVE_DMALLOC_H

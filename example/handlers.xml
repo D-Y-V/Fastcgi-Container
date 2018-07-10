@@ -1,17 +1,12 @@
 <?xml version="1.0" ?>
 
 <handlers urlPrefix="/myapp">
-	<filter url="/.*">
-		<component name="form_authenticator"/>
-	</filter>
+
 
 	<filter>
 		<component name="example_filter"/>
 	</filter>
 
-	<handler url="/login" pool="work_pool">
-		<component name="login"/>
-	</handler>
 
 	
 	<handler url="/test" pool="work_pool">
